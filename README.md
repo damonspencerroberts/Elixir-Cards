@@ -1,4 +1,4 @@
-# Card
+# Cards Simulator
 
 ## Very small Project for the Elixir Programming Bootcamp on Udemy with Stephen Grider
 
