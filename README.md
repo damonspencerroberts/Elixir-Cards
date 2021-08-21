@@ -6,4 +6,4 @@ This Projects is a card simulator. It can generate a deck of cards with or witho
 
 #### Documentation
 
-Very cool ex_doc generated documentation can be found here: https://damonspencerroberts.github.io/Elixir-Cards/api-reference.html
+Very cool ex_doc generated documentation can be found here: https://damonspencerroberts.github.io/Elixir-Cards/Card.html
