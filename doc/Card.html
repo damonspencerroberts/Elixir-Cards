@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.25.1">
+    <meta name="project" content="card v0.1.0">
+
+    <title>Card — card v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
+
+    <script src="dist/sidebar_items-06ca665af1.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-f27ff079945e43879c46.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+card
+      </a>
+      <strong class="sidebar-projectVersion">
+        v0.1.0
+      </strong>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+Card <small class="app-vsn">(card v0.1.0)</small>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>  This Projects is a card simulator.
+  It can generate a deck of cards with or without jokers and
+  produce certain functionality to those cards such as shuffle the cards,
+  find out if the deck contains a certain card, deal the cards,
+  shuffle and draw the cards, and finally save the cards to file and
+  open a file containing rows of cards.</p>
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#contains?/2">contains?(cards, card)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This function takes a deck of cards and any card you want to check as an argument
+  and verifies that the deck contains the card you are checking.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cards/0">create_cards()</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This Function Generates an ordered deck of cards</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cards_with_jokers/0">create_cards_with_jokers()</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This function generates an ordered list of cards with 2 jokers</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deal/2">deal(cards, amt)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This function creates a tuple with a hand and the rest of the deck.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#draw/1">draw(withJokers)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This function</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#open/1">open(filename)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This function takes a file name as an argument and opens the file and returns the deck of cards
+  if formatted correctly, otherwise returns an error message if the file does not exist.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#save/2">save(cards, filename)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This function saves takes a deck of cards and file name as arguments
+  and saves the cards to a file in the root of your project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#shuffle/1">shuffle(cards)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>  This functions takes a deck as an argument and returns a shuffle list of cards</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="contains?/2">
+
+  <div class="detail-header">
+    <a href="#contains?/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">contains?(cards, card)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>contains?(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>  This function takes a deck of cards and any card you want to check as an argument
+  and verifies that the deck contains the card you are checking.</p><h2 id="contains?/2-function" class="section-heading">
+  <a href="#contains?/2-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">contains?</span><span class="p" data-group-id="8610654925-1">(</span><span class="n">cards</span><span class="p">,</span><span class="w"> </span><span class="n">card</span><span class="p" data-group-id="8610654925-1">)</span><span class="w"> </span><span class="k" data-group-id="8610654925-2">do</span><span class="w">
+  </span><span class="nc">Enum</span><span class="o">.</span><span class="n">member?</span><span class="p" data-group-id="8610654925-3">(</span><span class="n">cards</span><span class="p">,</span><span class="w"> </span><span class="n">card</span><span class="p" data-group-id="8610654925-3">)</span><span class="w">
+</span><span class="k" data-group-id="8610654925-2">end</span></code></pre><h2 id="contains?/2-examples" class="section-heading">
+  <a href="#contains?/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Card</span><span class="o">.</span><span class="n">create_cards</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Card</span><span class="o">.</span><span class="n">contains?</span><span class="p" data-group-id="1182598757-1">(</span><span class="n">deck</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Queen of Hearts&quot;</span><span class="p" data-group-id="1182598757-1">)</span><span class="w">
+</span><span class="no">true</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="create_cards/0">
+
+  <div class="detail-header">
+    <a href="#create_cards/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cards()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>create_cards() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()</pre>
+
+      </div>
+
+<p>  This Function Generates an ordered deck of cards</p><h2 id="create_cards/0-function" class="section-heading">
+  <a href="#create_cards/0-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">create_cards</span><span class="w"> </span><span class="k" data-group-id="8262521547-1">do</span><span class="w">
+  </span><span class="n">cards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8262521547-2">[</span><span class="w">
+    </span><span class="s">&quot;Ace&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Three&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Four&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Five&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Six&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Seven&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Eight&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Nine&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Ten&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Jack&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Queen&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;King&quot;</span><span class="w">
+  </span><span class="p" data-group-id="8262521547-2">]</span><span class="w">
+
+  </span><span class="n">suits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8262521547-3">[</span><span class="s">&quot;Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Diamonds&quot;</span><span class="p" data-group-id="8262521547-3">]</span><span class="w">
+
+  </span><span class="k">for</span><span class="w"> </span><span class="n">suit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">suits</span><span class="p">,</span><span class="w"> </span><span class="n">card</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cards</span><span class="w"> </span><span class="k" data-group-id="8262521547-4">do</span><span class="w">
+    </span><span class="s">&quot;</span><span class="si" data-group-id="8262521547-5">#{</span><span class="n">card</span><span class="si" data-group-id="8262521547-5">}</span><span class="s"> of </span><span class="si" data-group-id="8262521547-6">#{</span><span class="n">suit</span><span class="si" data-group-id="8262521547-6">}</span><span class="s">&quot;</span><span class="w">
+  </span><span class="k" data-group-id="8262521547-4">end</span><span class="w">
+</span><span class="k" data-group-id="8262521547-1">end</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="create_cards_with_jokers/0">
+
+  <div class="detail-header">
+    <a href="#create_cards_with_jokers/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cards_with_jokers()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>create_cards_with_jokers() :: [...]</pre>
+
+      </div>
+
+<p>  This function generates an ordered list of cards with 2 jokers</p><h2 id="create_cards_with_jokers/0-function" class="section-heading">
+  <a href="#create_cards_with_jokers/0-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">create_cards_with_jokers</span><span class="w"> </span><span class="k" data-group-id="6446144949-1">do</span><span class="w">
+  </span><span class="nc">Card</span><span class="o">.</span><span class="n">create_cards</span><span class="p" data-group-id="6446144949-2">(</span><span class="p" data-group-id="6446144949-2">)</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p" data-group-id="6446144949-3">[</span><span class="s">&quot;Joker&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joker&quot;</span><span class="p" data-group-id="6446144949-3">]</span><span class="w">
+</span><span class="k" data-group-id="6446144949-1">end</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="deal/2">
+
+  <div class="detail-header">
+    <a href="#deal/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deal(cards, amt)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>deal(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()}</pre>
+
+      </div>
+
+<p>  This function creates a tuple with a hand and the rest of the deck.</p><h2 id="deal/2-function" class="section-heading">
+  <a href="#deal/2-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">deal</span><span class="p" data-group-id="1842379287-1">(</span><span class="n">cards</span><span class="p">,</span><span class="w"> </span><span class="n">amt</span><span class="p" data-group-id="1842379287-1">)</span><span class="w"> </span><span class="k" data-group-id="1842379287-2">do</span><span class="w">
+  </span><span class="nc">Enum</span><span class="o">.</span><span class="n">split</span><span class="p" data-group-id="1842379287-3">(</span><span class="n">cards</span><span class="p">,</span><span class="w"> </span><span class="n">amt</span><span class="p" data-group-id="1842379287-3">)</span><span class="w">
+</span><span class="k" data-group-id="1842379287-2">end</span></code></pre><h2 id="deal/2-examples" class="section-heading">
+  <a href="#deal/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+<pre><code class="makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Card</span><span class="o">.</span><span class="n">create_cards</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Card</span><span class="o">.</span><span class="n">deal</span><span class="p" data-group-id="8712760870-1">(</span><span class="n">deck</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="8712760870-1">)</span><span class="w">
+</span><span class="p" data-group-id="8712760870-2">{</span><span class="p" data-group-id="8712760870-3">[</span><span class="s">&quot;Ace of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Four of Hearts&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Five of Hearts&quot;</span><span class="p" data-group-id="8712760870-3">]</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="8712760870-4">[</span><span class="s">&quot;Six of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Seven of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Eight of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nine of Hearts&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Ten of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jack of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Queen of Hearts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;King of Hearts&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Ace of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Four of Clubs&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Five of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Six of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Seven of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Eight of Clubs&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Nine of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ten of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jack of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Queen of Clubs&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;King of Clubs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ace of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Three of Spades&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Four of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Five of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Six of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Seven of Spades&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Eight of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nine of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ten of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jack of Spades&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Queen of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;King of Spades&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ace of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Two of Diamonds&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Three of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Four of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Five of Diamonds&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Six of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Seven of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Eight of Diamonds&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Nine of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ten of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jack of Diamonds&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Queen of Diamonds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;King of Diamonds&quot;</span><span class="p" data-group-id="8712760870-4">]</span><span class="p" data-group-id="8712760870-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="draw/1">
+
+  <div class="detail-header">
+    <a href="#draw/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">draw(withJokers)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>draw(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()</pre>
+
+      </div>
+
+<p>  This function:</p><ul><li>Takes a boolean argument whether the user wants the deck with jokers or not</li><li>Creates the deck</li><li>Shuffles the deck</li><li>Deals out 5 cards</li></ul><h2 id="draw/1-function" class="section-heading">
+  <a href="#draw/1-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">draw</span><span class="p" data-group-id="5254345226-1">(</span><span class="n">withJokers</span><span class="p" data-group-id="5254345226-1">)</span><span class="w"> </span><span class="k" data-group-id="5254345226-2">do</span><span class="w">
+  </span><span class="p" data-group-id="5254345226-3">{</span><span class="n">cards</span><span class="p">,</span><span class="w"> </span><span class="c">_rest</span><span class="p" data-group-id="5254345226-3">}</span><span class="w"> </span><span class="o">=</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="n">withJokers</span><span class="w"> </span><span class="k" data-group-id="5254345226-4">do</span><span class="w">
+      </span><span class="no">true</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nc">Card</span><span class="o">.</span><span class="n">create_cards_with_jokers</span><span class="p" data-group-id="5254345226-5">(</span><span class="p" data-group-id="5254345226-5">)</span><span class="w">
+      </span><span class="no">false</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nc">Card</span><span class="o">.</span><span class="n">create_cards</span><span class="p" data-group-id="5254345226-6">(</span><span class="p" data-group-id="5254345226-6">)</span><span class="w">
+    </span><span class="k" data-group-id="5254345226-4">end</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Card</span><span class="o">.</span><span class="n">shuffle</span><span class="p" data-group-id="5254345226-7">(</span><span class="p" data-group-id="5254345226-7">)</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Card</span><span class="o">.</span><span class="n">deal</span><span class="p" data-group-id="5254345226-8">(</span><span class="mi">5</span><span class="p" data-group-id="5254345226-8">)</span><span class="w">
+
+  </span><span class="n">cards</span><span class="w">
+</span><span class="k" data-group-id="5254345226-2">end</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="open/1">
+
+  <div class="detail-header">
+    <a href="#open/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">open(filename)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>open(
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()
+  | maybe_improper_list(
+      <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">maybe_improper_list</a>(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | []) | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">char</a>(),
+      <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | []
+    )
+) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>  This function takes a file name as an argument and opens the file and returns the deck of cards
+  if formatted correctly, otherwise returns an error message if the file does not exist.</p><h2 id="open/1-function" class="section-heading">
+  <a href="#open/1-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">open</span><span class="p" data-group-id="9818876798-1">(</span><span class="n">filename</span><span class="p" data-group-id="9818876798-1">)</span><span class="w"> </span><span class="k" data-group-id="9818876798-2">do</span><span class="w">
+  </span><span class="k">case</span><span class="w"> </span><span class="nc">File</span><span class="o">.</span><span class="n">read</span><span class="p" data-group-id="9818876798-3">(</span><span class="n">filename</span><span class="p" data-group-id="9818876798-3">)</span><span class="w"> </span><span class="k" data-group-id="9818876798-4">do</span><span class="w">
+    </span><span class="p" data-group-id="9818876798-5">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">binary</span><span class="p" data-group-id="9818876798-5">}</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="ss">:erlang</span><span class="o">.</span><span class="n">binary_to_term</span><span class="p" data-group-id="9818876798-6">(</span><span class="n">binary</span><span class="p" data-group-id="9818876798-6">)</span><span class="w">
+    </span><span class="p" data-group-id="9818876798-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="c">_report</span><span class="p" data-group-id="9818876798-7">}</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;There is no file that exists with </span><span class="si" data-group-id="9818876798-8">#{</span><span class="n">filename</span><span class="si" data-group-id="9818876798-8">}</span><span class="s">&quot;</span><span class="w">
+  </span><span class="k" data-group-id="9818876798-4">end</span><span class="w">
+</span><span class="k" data-group-id="9818876798-2">end</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="save/2">
+
+  <div class="detail-header">
+    <a href="#save/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">save(cards, filename)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>save(
+  <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()
+  | maybe_improper_list(
+      <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">maybe_improper_list</a>(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | []) | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">char</a>(),
+      <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>() | []
+    )
+) :: :ok | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>()}</pre>
+
+      </div>
+
+<p>  This function saves takes a deck of cards and file name as arguments
+  and saves the cards to a file in the root of your project.</p><h2 id="save/2-function" class="section-heading">
+  <a href="#save/2-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">save</span><span class="p" data-group-id="8964642167-1">(</span><span class="n">cards</span><span class="p">,</span><span class="w"> </span><span class="n">filename</span><span class="p" data-group-id="8964642167-1">)</span><span class="w"> </span><span class="k" data-group-id="8964642167-2">do</span><span class="w">
+  </span><span class="n">binary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:erlang</span><span class="o">.</span><span class="n">term_to_binary</span><span class="p" data-group-id="8964642167-3">(</span><span class="n">cards</span><span class="p" data-group-id="8964642167-3">)</span><span class="w">
+  </span><span class="nc">File</span><span class="o">.</span><span class="n">write</span><span class="p" data-group-id="8964642167-4">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">binary</span><span class="p" data-group-id="8964642167-4">)</span><span class="w">
+</span><span class="k" data-group-id="8964642167-2">end</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="shuffle/1">
+
+  <div class="detail-header">
+    <a href="#shuffle/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">shuffle(cards)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>shuffle(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()</pre>
+
+      </div>
+
+<p>  This functions takes a deck as an argument and returns a shuffle list of cards</p><h2 id="shuffle/1-function" class="section-heading">
+  <a href="#shuffle/1-function" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Function
+</h2>
+<pre><code class="makeup elixir"><span class="kd">def</span><span class="w"> </span><span class="nf">shuffle</span><span class="p" data-group-id="7808482123-1">(</span><span class="n">cards</span><span class="p" data-group-id="7808482123-1">)</span><span class="w"> </span><span class="k" data-group-id="7808482123-2">do</span><span class="w">
+  </span><span class="nc">Enum</span><span class="o">.</span><span class="n">shuffle</span><span class="p" data-group-id="7808482123-3">(</span><span class="n">cards</span><span class="p" data-group-id="7808482123-3">)</span><span class="w">
+</span><span class="k" data-group-id="7808482123-2">end</span></code></pre>
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.25.1) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
